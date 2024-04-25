@@ -43,7 +43,7 @@ module.exports.showListing = async (req,res)=>{
         let savedListing = await newListing.save();
         console.log(savedListing);
         req.flash("success","New Listing Created!");
-        res.redirect("/Listings");
+        res.redirect("/listings");
     };
 
 
@@ -59,7 +59,7 @@ module.exports.showListing = async (req,res)=>{
 
         let originalImageUrl = listing.image.url;
         originalImageUrl=originalImageUrl.replace("/upload","/upload/w_250");
-        res.render("Listings/edit.ejs",{listing,originalImageUrl});
+        res.render("listings/edit.ejs",{listing,originalImageUrl});
     
     };
 
